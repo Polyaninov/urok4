@@ -34,9 +34,13 @@ psql
         pmn@pmn-ubuntu:~$ sudo lvcreate -l 50%VG vg01
 
 
+          pmn@pmn-ubuntu:~$ mkfs.ext4 /dev/mapper/vg01-lvol0 
 
 
     5. Смонтировать созданный раздел в директорию, которую нашли в задании 3
+     pmn@pmn-ubuntu:~$ sudo mount /dev/mapper/vg01-lvol0 /var/lib/postgresql
+
+    
     7. Создать из двух разделов на оставшемся диске два PV
     8. Добавить их в сущеуствующую VG
     9. Увеличить размер LV под данными postgres
